@@ -1,48 +1,34 @@
+// Selecionando os elementos que criamos no HTML
+const fortuneButton = document.getElementById("fortune-btn");
+const fortuneDisplay = document.getElementById("fortune-text");
 
-const button = document.getElementById("fortune-btn");
-const textDisplay = document.getElementById("fortune-text");
+// Agrupando suas previsões originais em um Array (Lista) profissional
+const fortunes = [
+  "Your cat will look very cuddly today.",
+  "The weather will be nice tomorrow.",
+  "Be cautious of your new neighbors.",
+  "You will find a new hobby soon.",
+  "It would be wise to avoid the color red today."
+];
 
-
-const fortune1 = "Your cat will look very cuddly today.";
-const fortune2 = "The weather will be nice tomorrow.";
-const fortune3 = "Be cautious of your new neighbors.";
-const fortune4 = "You will find a new hobby soon.";
-const fortune5 = "It would be wise to avoid the color red today.";
-
-
+// Função responsável por sortear e exibir a sorte na tela
 function tellFortune() {
-  const max = 5;
-  const min = 1;
+  // Gera um índice aleatório correspondente à lista fortunes (entre 0 e 4)
+  const randomIndex = Math.floor(Math.random() * fortunes.length);
+  const selectedFortune = fortunes[randomIndex];
+
+  // Remove o estilo de "placeholder" inicial
+  fortuneDisplay.classList.remove("placeholder");
   
+  // Força o reset da animação CSS removendo e recolocando a classe "revealed"
+  fortuneDisplay.classList.remove("revealed");
+  void fortuneDisplay.offsetWidth; // Truque para reiniciar a animação no navegador
   
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
-  let selectedFortune;
-
-  if (randomNumber === 1) {
-    selectedFortune = fortune1;
-  } else if (randomNumber === 2) {
-    selectedFortune = fortune2;
-  } else if (randomNumber === 3) {
-    selectedFortune = fortune3;
-  } else if (randomNumber === 4) {
-    selectedFortune = fortune4;
-  } else {
-    selectedFortune = fortune5;
-  }
-
-
-  textDisplay.classList.remove("placeholder");
-
-  textDisplay.classList.remove("revealed");
-
-  void textDisplay.offsetWidth;
-
-  textDisplay.textContent = selectedFortune;
-
-  textDisplay.classList.add("revealed");
-
+  // Atualiza o texto na página e adiciona a animação de revelação
+  fortuneDisplay.textContent = selectedFortune;
+  fortuneDisplay.classList.add("revealed");
 }
 
+// Configura o ouvinte de eventos para disparar a função no clique do botão
+fortuneButton.addEventListener("click", tellFortune);
 
-button.addEventListener("click", tellFortune);
