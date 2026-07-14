@@ -101,7 +101,7 @@ h1 {
 /* Estilo que é aplicado via JavaScript após o sorteio */
 #fortune-text.revealed {
   color: var(--text-primary);
-  animation: fadeIn 0.6s ease-in-out forwards;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 /* ==========================================
