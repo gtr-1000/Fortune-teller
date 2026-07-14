@@ -32,7 +32,16 @@ function tellFortune() {
   }
 
 
+  textDisplay.classList.remove("placeholder");
+
+  textDisplay.classList.remove("revealed");
+
+  void textDisplay.offsetWidth;
+
   textDisplay.textContent = selectedFortune;
+
+  textDisplay.classList.add("revealed");
+
 }
 
 
