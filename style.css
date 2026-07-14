@@ -1,0 +1,149 @@
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f0c1b 0%, #201335 100%);
+  --card-bg: #161224;
+  --gold: #dfb15b;
+  --gold-hover: #f1c97a;
+  --text-primary: #f5f3f7;
+  --text-muted: #a39eb4;
+  --border-color: rgba(223, 177, 91, 0.2);
+  --shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* ==========================================
+   CARD PRINCIPAL
+   ========================================== */
+.card-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  border-color: rgba(223, 177, 91, 0.4);
+}
+
+/* ==========================================
+   CONTEÚDO E TEXTOS
+   ========================================== */
+.crystal-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(223, 177, 91, 0.3));
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* ==========================================
+   DISPLAY DA PREVISÃO
+   ========================================== */
+.fortune-display {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#fortune-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Estilo cinza enquanto o usuário não clica */
+#fortune-text.placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* Estilo que é aplicado via JavaScript após o sorteio */
+#fortune-text.revealed {
+  color: var(--text-primary);
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+/* ==========================================
+   BOTÃO INTERATIVO
+   ========================================== */
+.interactive-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #0f0c1b;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(223, 177, 91, 0.2);
+}
+
+.interactive-btn:hover {
+  background: var(--gold-hover);
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(223, 177, 91, 0.4);
+}
+
+.interactive-btn:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================
+   ANIMAÇÃO
+   ========================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
