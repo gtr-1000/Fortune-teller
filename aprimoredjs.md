@@ -1,3 +1,4 @@
+/*
 // Selecionando os elementos que criamos no HTML
 const fortuneButton = document.getElementById("fortune-btn");
 const fortuneDisplay = document.getElementById("fortune-text");
@@ -31,3 +32,4 @@ function tellFortune() {
 
 // Configura o ouvinte de eventos para disparar a função no clique do botão
 fortuneButton.addEventListener("click", tellFortune);
+*/
